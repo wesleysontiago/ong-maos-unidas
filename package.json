@@ -1,6 +1,6 @@
 {
   "name": "ong-maos-unidas",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Plataforma web da ONG Mãos Unidas: HTML5 semântico, CSS3 responsivo e SPA em JavaScript modular.",
   "private": true,
   "type": "module",
