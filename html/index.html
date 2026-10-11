@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ONG Mãos Unidas: projetos sociais de educação, alimentação e cidadania.">
+  <title>Início | ONG Mãos Unidas</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    document.documentElement.className = "js";
+    try {
+      if (JSON.parse(localStorage.getItem("ong:preferencias") || "{}").fonteGrande) {
+        document.documentElement.classList.add("fonte-grande");
+      }
+    } catch (e) {}
+    // Se os módulos não carregarem (ex.: arquivo aberto direto do disco), volta ao modo sem JS
+    addEventListener("load", function () {
+      if (!window.appIniciado) document.documentElement.className = "no-js";
+    });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="../imagens/logo.svg" alt="Logotipo da ONG Mãos Unidas" width="160" height="60"></a>
+    <button type="button" class="botao-fonte" aria-pressed="false" aria-label="Aumentar o tamanho do texto">A+</button>
+    <nav aria-label="Menu principal">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-icone" aria-hidden="true"></span><span class="menu-texto">Menu</span>
+      </button>
+      <ul id="menu-principal" class="menu">
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html">Projetos sociais</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#lista-projetos">Nossos projetos</a></li>
+            <li><a href="projetos.html#voluntariado">Seja voluntário</a></li>
+            <li><a href="projetos.html#doacoes">Como doar</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="conteudo" class="container">
+    <h1>ONG Mãos Unidas</h1>
+    <p>Transformando comunidades por meio da educação, da alimentação e da cidadania desde 2012.</p>
+    <section aria-labelledby="sobre" class="grid">
+      <h2 id="sobre">Quem somos</h2>
+      <article class="col-md-4"><h3>Missão</h3><p>Promover a inclusão social de famílias em situação de vulnerabilidade.</p></article>
+      <article class="col-md-4"><h3>Visão</h3><p>Ser referência regional em projetos sociais transparentes até 2030.</p></article>
+      <article class="col-md-4"><h3>Valores</h3><ul><li>Transparência</li><li>Respeito à diversidade</li><li>Compromisso com a comunidade</li></ul></article>
+    </section>
+    <section aria-labelledby="impacto">
+      <h2 id="impacto">Nosso impacto</h2>
+      <figure class="grafico">
+        <figcaption class="grafico__titulo">Refeições distribuídas por ano (2021–2025)</figcaption>
+        <div class="grafico__area">
+          <canvas id="grafico-impacto" role="img" aria-label="Gráfico de barras: as refeições distribuídas cresceram de 4.800 em 2021 para 12.000 em 2025."></canvas>
+        </div>
+        <details>
+          <summary>Ver os dados em tabela</summary>
+          <table id="tabela-impacto">
+            <thead><tr><th scope="col">Ano</th><th scope="col">Refeições</th></tr></thead>
+            <tbody>
+              <tr><td>2021</td><td>4.800</td></tr>
+              <tr><td>2022</td><td>6.900</td></tr>
+              <tr><td>2023</td><td>8.700</td></tr>
+              <tr><td>2024</td><td>10.500</td></tr>
+              <tr><td>2025</td><td>12.000</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </figure>
+    </section>
+    <section aria-labelledby="historia">
+      <h2 id="historia">Nossa história</h2>
+      <figure>
+        <picture>
+          <source srcset="../imagens/equipe.webp" type="image/webp">
+          <img src="../imagens/equipe.jpg" alt="Voluntários da ONG reunidos em frente à sede" width="600" height="340" loading="lazy">
+        </picture>
+        <figcaption>Equipe de voluntários na inauguração da sede, em 2012.</figcaption>
+      </figure>
+      <p>Fundada por moradores do bairro, hoje a ONG atende mais de 800 famílias por ano.</p>
+    </section>
+    <section aria-labelledby="contato">
+      <h2 id="contato">Contato</h2>
+      <address>
+        Rua das Flores, 123 – Centro<br>
+        E-mail: <a href="mailto:contato@maosunidas.org.br">contato@maosunidas.org.br</a><br>
+        Telefone: <a href="tel:+551130000000">(11) 3000-0000</a>
+      </address>
+    </section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span aria-hidden="true">&#10003;</span>
+    <p></p>
+  </div>
+  <footer>
+    <p>&copy; 2026 ONG Mãos Unidas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

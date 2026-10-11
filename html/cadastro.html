@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastre-se como voluntário ou doador da ONG Mãos Unidas.">
+  <title>Cadastro | ONG Mãos Unidas</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    document.documentElement.className = "js";
+    try {
+      if (JSON.parse(localStorage.getItem("ong:preferencias") || "{}").fonteGrande) {
+        document.documentElement.classList.add("fonte-grande");
+      }
+    } catch (e) {}
+    // Se os módulos não carregarem (ex.: arquivo aberto direto do disco), volta ao modo sem JS
+    addEventListener("load", function () {
+      if (!window.appIniciado) document.documentElement.className = "no-js";
+    });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="../imagens/logo.svg" alt="Logotipo da ONG Mãos Unidas" width="160" height="60"></a>
+    <button type="button" class="botao-fonte" aria-pressed="false" aria-label="Aumentar o tamanho do texto">A+</button>
+    <nav aria-label="Menu principal">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-icone" aria-hidden="true"></span><span class="menu-texto">Menu</span>
+      </button>
+      <ul id="menu-principal" class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html">Projetos sociais</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#lista-projetos">Nossos projetos</a></li>
+            <li><a href="projetos.html#voluntariado">Seja voluntário</a></li>
+            <li><a href="projetos.html#doacoes">Como doar</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html" aria-current="page">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="conteudo" class="container">
+    <h1>Cadastro de voluntários e doadores</h1>
+    <div class="alerta alerta--info" role="note">
+      <span class="alerta__icone" aria-hidden="true">i</span>
+      <p><strong>Leva menos de 2 minutos.</strong> Campos com * são obrigatórios.</p>
+    </div>
+    <form action="#" method="post" data-cadastro>
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome" required minlength="5" maxlength="100" autocomplete="name">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" name="cpf" required inputmode="numeric" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00" title="Formato: 000.000.000-00">
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" required inputmode="numeric" pattern="\(\d{2}\) \d{4,5}-\d{4}" placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000">
+        <label for="nascimento">Data de nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" required min="1900-01-01" max="2010-12-31">
+      </fieldset>
+      <fieldset>
+        <legend>Endereço</legend>
+        <label for="cep">CEP</label>
+        <input type="text" id="cep" name="cep" required inputmode="numeric" pattern="\d{5}-\d{3}" placeholder="00000-000" title="Formato: 00000-000">
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" name="endereco" required autocomplete="address-line1">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade" required>
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado" required>
+          <option value="">Selecione</option>
+          <option value="SP">São Paulo</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="outro">Outro</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Como deseja participar?</legend>
+        <div class="opcao"><input type="radio" id="voluntario" name="participacao" value="voluntario" required> <label for="voluntario">Voluntário</label></div>
+        <div class="opcao"><input type="radio" id="doador" name="participacao" value="doador"> <label for="doador">Doador</label></div>
+      </fieldset>
+      <div class="opcao">
+        <input type="checkbox" id="termos" name="termos" required>
+        <label for="termos">Autorizo o uso dos meus dados conforme a LGPD.</label>
+      </div>
+      <button type="button" class="link-botao" data-abrir-modal="modal-lgpd">Ler os termos</button>
+      <div class="acoes">
+        <button type="submit">Enviar cadastro</button>
+        <button type="reset">Limpar</button>
+      </div>
+    </form>
+    <section id="secao-historico" class="historico" aria-labelledby="titulo-historico" hidden>
+      <h2 id="titulo-historico">Cadastros feitos neste navegador</h2>
+      <ul id="historico-cadastros"></ul>
+      <button type="button" id="limpar-historico" class="botao-secundario">Limpar histórico</button>
+    </section>
+    <dialog id="modal-lgpd" class="modal" aria-labelledby="modal-titulo">
+      <form method="dialog">
+        <div class="modal__cabecalho">
+          <h2 id="modal-titulo">Termos de uso dos dados</h2>
+          <button class="botao-fechar" aria-label="Fechar">&times;</button>
+        </div>
+        <div class="modal__corpo">
+          <p>Seus dados serão usados apenas para contato sobre voluntariado e doações. Você pode pedir a exclusão a qualquer momento pelo e-mail contato@maosunidas.org.br.</p>
+        </div>
+        <div class="modal__rodape">
+          <button>Entendi</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span aria-hidden="true">&#10003;</span>
+    <p></p>
+  </div>
+  <footer>
+    <p>&copy; 2026 ONG Mãos Unidas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
