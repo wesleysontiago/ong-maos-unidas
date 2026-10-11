@@ -1,0 +1,8 @@
+/* =========================================================
+   RESET — remove diferenças entre navegadores
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body, h1, h2, h3, p, figure, ul, ol { margin: 0; }
+img, picture { max-width: 100%; height: auto; display: block; }
+input, button, select, textarea { font: inherit; }
