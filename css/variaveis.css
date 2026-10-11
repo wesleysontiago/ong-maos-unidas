@@ -1,0 +1,62 @@
+/* =========================================================
+   DESIGN SYSTEM — variáveis (cores, tipografia, espaçamentos)
+   ========================================================= */
+:root {
+  /* ---------- Cores primárias (verde: esperança, cuidado) ---------- */
+  --cor-primaria:        #1B5E20;
+  --cor-primaria-media:  #2E7D32;
+  --cor-primaria-clara:  #E8F5E9;
+
+  /* ---------- Cores secundárias (laranja: ação, doação) ---------- */
+  --cor-secundaria:       #B23C00;
+  --cor-secundaria-clara: #FFF3E0;
+  --cor-destaque:         #FFC107;
+
+  /* ---------- Neutras ---------- */
+  --cor-texto:        #1A1A1A;
+  --cor-texto-suave:  #4A4A4A;
+  --cor-borda:        #767676;
+  --cor-divisor:      #DDDDDD;
+  --cor-fundo:        #FAFAF7;
+  --cor-branco:       #FFFFFF;
+
+  /* ---------- Feedback ---------- */
+  --cor-sucesso: #1B5E20;
+  --cor-erro:    #B00020;
+
+  /* ---------- Tipografia (escala 1.25 – terça maior) ---------- */
+  --fonte-base:   "Segoe UI", Roboto, Arial, sans-serif;
+  --fs-sm:   0.875rem;   /* 14px – legendas, ajuda   */
+  --fs-base: 1rem;       /* 16px – corpo do texto    */
+  --fs-md:   1.25rem;    /* 20px – h3                */
+  --fs-lg:   1.5625rem;  /* 25px – h2                */
+  --fs-xl:   1.953rem;   /* 31px – h1 (mobile)       */
+  --fs-xxl:  2.441rem;   /* 39px – h1 (desktop)      */
+  --lh-texto:  1.6;
+  --lh-titulo: 1.2;
+  --fw-normal: 400;
+  --fw-negrito: 700;
+
+  /* ---------- Espaçamentos (escala modular base 8px) ---------- */
+  --esp-1: 0.25rem;  /*  4px */
+  --esp-2: 0.5rem;   /*  8px */
+  --esp-3: 1rem;     /* 16px */
+  --esp-4: 1.5rem;   /* 24px */
+  --esp-5: 2rem;     /* 32px */
+  --esp-6: 3rem;     /* 48px */
+  --esp-7: 4rem;     /* 64px */
+
+  /* ---------- Outros tokens ---------- */
+  --raio:       8px;
+  --sombra:       0 2px 8px rgba(0, 0, 0, 0.12);
+  --sombra-forte: 0 8px 20px rgba(0, 0, 0, 0.18);
+  --transicao:    0.2s ease;
+  --cor-secundaria-escura: #8A2E00;
+  --cor-erro-clara:        #FDECEE;
+  --cor-info:              #0B5394;
+  --cor-info-clara:        #E3F2FD;
+  --cor-aviso:             #6B4E00;
+  --cor-aviso-clara:       #FFF8E1;
+  --largura-max: 1200px;
+  --gap-grid:   var(--esp-4);
+}
