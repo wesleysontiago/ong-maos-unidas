@@ -5,7 +5,7 @@ Plataforma web de uma ONG (fictícia) do terceiro setor, desenvolvida na discipl
 mostra o impacto alcançado e capta voluntários e doadores por meio de um formulário de cadastro
 com validação completa.
 
-> Versão atual: **1.0.1** — veja o [histórico de versões](#histórico-de-versões).
+> Versão atual: **1.1.0** — veja o [histórico de versões](#histórico-de-versões).
 
 ---
 
