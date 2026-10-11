@@ -9,7 +9,7 @@
 // =========================================================
 import { cpfValido } from './mascaras.js';
 
-const REGEX = {
+export const REGEX = {
   nome:     /^[A-Za-zÀ-ÿ'-]+(\s+[A-Za-zÀ-ÿ'-]+)+$/, // nome + sobrenome (aceita hífen e apóstrofo)
   email:    /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,       // algo@dominio.com
   cpf:      /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,         // 000.000.000-00
@@ -28,7 +28,7 @@ function calcularIdade(data) {
 }
 
 // Cada regra devolve '' (válido) ou a mensagem de erro
-const REGRAS = {
+export const REGRAS = {
   nome: function (v) {
     if (!v) return 'Informe seu nome completo.';
     if (!REGEX.nome.test(v)) return 'Digite nome e sobrenome, usando apenas letras.';
