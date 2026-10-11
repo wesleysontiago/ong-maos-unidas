@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guia de componentes visuais da plataforma ONG Mãos Unidas.">
+  <title>Componentes | ONG Mãos Unidas</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script>
+    document.documentElement.className = "js";
+    try {
+      if (JSON.parse(localStorage.getItem("ong:preferencias") || "{}").fonteGrande) {
+        document.documentElement.classList.add("fonte-grande");
+      }
+    } catch (e) {}
+    // Se os módulos não carregarem (ex.: arquivo aberto direto do disco), volta ao modo sem JS
+    addEventListener("load", function () {
+      if (!window.appIniciado) document.documentElement.className = "no-js";
+    });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="../imagens/logo.svg" alt="Logotipo da ONG Mãos Unidas" width="160" height="60"></a>
+    <button type="button" class="botao-fonte" aria-pressed="false" aria-label="Aumentar o tamanho do texto">A+</button>
+    <nav aria-label="Menu principal">
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span class="menu-icone" aria-hidden="true"></span><span class="menu-texto">Menu</span>
+      </button>
+      <ul id="menu-principal" class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html">Projetos sociais</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#lista-projetos">Nossos projetos</a></li>
+            <li><a href="projetos.html#voluntariado">Seja voluntário</a></li>
+            <li><a href="projetos.html#doacoes">Como doar</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="conteudo" class="container">
+    <h1>Guia de componentes</h1>
+    <p>Referência visual dos componentes de feedback, com as classes prontas para uso.</p>
+
+    <section aria-labelledby="t-badges">
+      <h2 id="t-badges">Badges</h2>
+      <p class="badges">
+        <span class="badge badge--educacao">Educação</span>
+        <span class="badge badge--alimentacao">Alimentação</span>
+        <span class="badge badge--ativo">Ativo</span>
+        <span class="badge badge--novo">Novo</span>
+        <span class="badge badge--urgente">Urgente</span>
+      </p>
+    </section>
+
+    <section aria-labelledby="t-alertas">
+      <h2 id="t-alertas">Alertas</h2>
+      <div class="alerta alerta--sucesso" role="status">
+        <span class="alerta__icone" aria-hidden="true">&#10003;</span>
+        <p><strong>Cadastro realizado!</strong> Em breve entraremos em contato.</p>
+      </div>
+      <div class="alerta alerta--erro" role="alert">
+        <span class="alerta__icone" aria-hidden="true">&times;</span>
+        <p><strong>Não foi possível enviar.</strong> Verifique os campos destacados.</p>
+      </div>
+      <div class="alerta alerta--aviso" role="note">
+        <span class="alerta__icone" aria-hidden="true">!</span>
+        <p><strong>Atenção:</strong> as inscrições encerram em 30 de junho.</p>
+      </div>
+      <div class="alerta alerta--info" role="note">
+        <span class="alerta__icone" aria-hidden="true">i</span>
+        <p><strong>Dica:</strong> você pode escolher mais de uma área de atuação.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-botoes">
+      <h2 id="t-botoes">Botões</h2>
+      <p class="badges">
+        <button type="button">Principal</button>
+        <button type="button" class="botao-secundario">Secundário</button>
+        <button type="button" disabled>Desabilitado</button>
+      </p>
+    </section>
+
+    <section aria-labelledby="t-interativos">
+      <h2 id="t-interativos">Toast e modal</h2>
+      <p class="badges">
+        <button type="button" id="demo-toast">Mostrar toast</button>
+        <button type="button" data-abrir-modal="modal-demo">Abrir modal</button>
+      </p>
+    </section>
+    <dialog id="modal-demo" class="modal" aria-labelledby="modal-titulo">
+      <form method="dialog">
+        <div class="modal__cabecalho">
+          <h2 id="modal-titulo">Confirmar doação</h2>
+          <button class="botao-fechar" aria-label="Fechar">&times;</button>
+        </div>
+        <div class="modal__corpo">
+          <p>Você está doando <strong>R$ 50,00</strong> para o projeto Cozinha Solidária. Deseja continuar?</p>
+        </div>
+        <div class="modal__rodape">
+          <button class="botao-secundario" value="cancelar">Cancelar</button>
+          <button value="confirmar">Confirmar doação</button>
+        </div>
+      </form>
+    </dialog>
+  </main>
+
+
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span aria-hidden="true">&#10003;</span>
+    <p></p>
+  </div>
+  <footer>
+    <p>&copy; 2026 ONG Mãos Unidas. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
