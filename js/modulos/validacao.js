@@ -192,8 +192,10 @@ export function iniciarValidacao(form, opcoes) {
   });
 
   // Envio: valida tudo
+  let acabouDeEnviar = false; // evita que um 2º clique valide o formulário já limpo
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    if (acabouDeEnviar) return;
     const nomes = new Set();
     const campos = Array.from(form.elements).filter(function (c) {
       if (!REGRAS[c.name] || nomes.has(c.name)) return false;
@@ -208,6 +210,8 @@ export function iniciarValidacao(form, opcoes) {
       invalidos[0].focus();                 // leva o usuário ao primeiro erro
       return;
     }
+    acabouDeEnviar = true;
+    setTimeout(function () { acabouDeEnviar = false; }, 1500);
     aoEnviarValido(form);   // quem iniciou a validação decide o que fazer
   });
 
