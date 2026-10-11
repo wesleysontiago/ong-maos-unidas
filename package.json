@@ -1,0 +1,19 @@
+{
+  "name": "ong-maos-unidas",
+  "version": "1.0.1",
+  "description": "Plataforma web da ONG Mãos Unidas: HTML5 semântico, CSS3 responsivo e SPA em JavaScript modular.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "http-server . -p 8000 -c-1 -o /html/index.html",
+    "test": "node --test",
+    "validar:html": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --skip-non-html index.html html",
+    "validar:css": "java -jar node_modules/vnu-jar/build/dist/vnu.jar --css css",
+    "validar": "npm run validar:html && npm run validar:css"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vnu-jar": "^26.10.11"
+  },
+  "license": "UNLICENSED"
+}
