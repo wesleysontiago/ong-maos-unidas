@@ -47,4 +47,4 @@ Os merges usam `--no-ff` para manter visível no histórico onde cada branch com
 
 ## Versão
 
-0.1.0
+1.0.0
